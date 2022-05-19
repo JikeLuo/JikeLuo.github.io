@@ -1,0 +1,127 @@
+$typeColor: #7aff00;
+* {
+  padding: 0;
+  margin: 0;
+}
+
+window {
+  overflow-y: hidden;
+}
+
+body {
+  background-color: #000000;
+  box-sizing: border-box;
+  white-space: pre;
+  font-family: "Fira Code";
+  color: $typeColor;
+}
+
+
+.window {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  height: 700px;
+  margin: 100px auto 0;
+}
+
+.top {
+  display: flex;
+  height: 40px;
+  border: 1px solid $typeColor;
+
+  .left {
+    justify-items: left;
+    width: 90%;
+    color: $typeColor;
+    line-height: 40px;
+    padding-left: 15px;
+  }
+
+  .right span {
+    justify-items: right;
+    width: 10%;
+    margin: 10px;
+    line-height: 40px;
+    color: $typeColor;
+  }
+}
+
+.main {
+  display: flex;
+  width: 1178px;
+  height: 660px;
+  color: $typeColor;
+  padding-top: 20px;
+  border: 1px solid $typeColor;
+  height: 660px;
+  padding-left: 20px;
+  overflow: scroll;
+  line-height: 35px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text {
+    display: inline;
+    padding-bottom: -50px;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      margin-left: 2px;
+      height: 21px;
+      width: 2px;
+      background-color: $typeColor;
+      animation: disappears 1.1s 1s steps(1) infinite;
+    }
+  }
+}
+
+@keyframes disappears {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: $typeColor;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.start {
+  position: fixed;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
+  border: 1px solid $typeColor;
+  width: 500px;
+  height: 300px;
+
+  .info {
+    flex: 1;
+    padding-top: 50px;
+    font-size: 20px;
+  }
+
+  #btn {
+    cursor: pointer;
+    flex: 1;
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    border: 1px solid $typeColor;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+
+  }
+
+}
