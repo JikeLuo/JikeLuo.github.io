@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jikeluo.gh","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="前言利用Hexo架構的部落格有個問題，它都會使用預設主題，但有時候我們需要展示自己寫的網頁，又不希望使用預設主題，以下方法能幫助你">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Hexo新增頁面中不使用預設主題">
+<meta property="og:url" content="https://jikeluo.gh/2022/05/20/20220520-add-page-without-layout/index.html">
+<meta property="og:site_name" content="想移民的準青年">
+<meta property="og:description" content="前言利用Hexo架構的部落格有個問題，它都會使用預設主題，但有時候我們需要展示自己寫的網頁，又不希望使用預設主題，以下方法能幫助你">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://lh3.googleusercontent.com/HS0PBPmgVs2WQyzdT0lwT2YcKQ3cCbMhxut3UByeJU3_NQLJ7vxWsOLlxjq3hxrPgHEGmBPqx8RAuYAkfUNuVs6lqw9hb_l9slJCyJH69FndO8b_lyRbpuG-NoTOoZtDwh5SYpinjx1k4wrOQ4VlcxO3hFAykeLbWnVZV0rITpQrrgh8WbyQKXt5qwEOB8J7JV-pucy8BnxivATYje6fvQDrTlj4WCJhnLXeAz0f5gwEhbYPVmfYuBsLAA4IQqhAzPi46yPajumK_4NdeVgG5N2xhpjhxcX9MNkfbz7DyrG57QiP6CsJ_h_NQrRtxEQnWolq9BMEXCbyduL-pFilaDAD9_GBlbrcIiwGz1rzV4kgNXoKpzWLkFIIkz-nqlW6fNOCTurE3bu07ARzQat1u6IePFXzPhXdMk09hncoZnbsk2GsEj6ahhUR6mfvrMN7noQGLRypoPeWqIwxrwgtTWwosg0lx-zSq8cAUCO5GZBmY03B3NX04CedrwjSeNaDKvGBNI188Y8awEkZDpBNi015J6DncvVIYBSdH7kEjzrJ2t0ttnELpCr3wfQ9EvweG6DcNUZAVxBDDFSkRP5nMLT_mYE7IjXGm3NX18AVwqeXE68txjI-aEqOhpMc-XPlnJg3kckg38EifSSrj2d4hKhrDbXNckzVSb-UITQD17N3NdCCSItuo1Tw7DgE8nq9SMa_bydEiF4V8r02rG5fs_cNd0GyqE2SrCjeIDAHNeUZPwIN0sPoE042nKI=w972-h318-no?authuser=0">
+<meta property="og:image" content="https://lh3.googleusercontent.com/fc-RLAxuAy5jSZOujqIOs6FCrMxw4xClxUWvNyZ8mHyLGkOItuM0ywnBtDzLD5lKmucle4wt8_T1r9liyjbKbllmvWb7n1onuVGTYlyjjXAz8bGzt4l23EBQTS7zvwTaMTBHWg4xI7eswrisg8mxpGabIUNkttz4FyGgEmUxi-2gU67TP96hmT29BVLoW1Qeek4egmOM6Zp56XMmu59IGuJ3dEpyyHt1AOd7xo0qU6Gs5vhwYGQXfbkxWDc6u7Qnv6hYVlENlUNAXayD1FugEdkWSf53Cn-KjDpquqibilXDp_7ASn4vCm4lZKcyQD5jTY8823GPZLOnF-eWqrRsOFzpIVKffdFVJnCttFXR2CrfEefjbrynNZVnJzicW1uab11ihUjGuWnDlDXIwga7RgoNQeMvKZPOvvBbv5h1t0A_4LTB3TWDq5cjdJaBG_qQUhfhIr5BTq-1ZaIr_QvcOij0KYgVGDIf09X5QBhdQhDYd-uZwv6aOP1vQPANWBSGznbLtG6XApU-vX2HLCvL2ejN14u8TU08CPBhEnH0y-8Z1e4uvrcYDxHWOBiFeNW8fx18DcC4d3eBAzNNO3BegJEazkl8FvAqBOOxkO1MWxX-1RUyAXBevS4vlqlEDWT1qhZAvazLXkYlc2j8FDIgtz7ugM-wElojtzKsAm2WqRHnOGOg5EVxdP-nStLkDxxTyFRe9SALd6yJtwa0wE5QMqj7pWzJgt9SM7wXV_j_xAH2Hk1bgadpI23ZjsY=w981-h842-no?authuser=0">
+<meta property="og:image" content="https://lh3.googleusercontent.com/I9kqPqka3UEVcAUjrXJ742-n-AgU6lvpADvViH3jHeOR211G2iQlzpYLz4I6h7j_k2j8eZeR7j2vdd104kXOka_xOckdXn4eYBI1ANkbyou_FO-7ZGpjaWVNqvT6l_l6dKe8RSV1a1ISKqJ6zt18usYb-YkdsgrIvrUDvk6YkInbFEUanKuRR-iFOVuPvYY2FybNjv7h7fCwYrhJPjDnnhdW5qYq6YXRSEwrehFUI8gkXotUi-elDk_8ilkP7sh7N8Tt9N4VqXZjkYqtHOqq1kylyswU1NcdEqfi__aN_yak4ZjJBNvstBpe5X-B3nDTitBdZ13Hi4IN3ablSK75akuYYV98-UxjPASnGmcQT97K8mZwjcH1_AMqSwV_8B0gX4BBUcToqmLFEBNRjr7xdu5UeRbLM8WKDTuCeUsYbki2U2_ybigC2a5uJ6KjXmuXTeOsQRX_w1bjHdB-p1LSrZEyyoGQCIVIQ3eiOLWbF3vCLRKNb_CwOd8kpzksvKSNvcXhGr_6xKcnAgkIgX28O_XvpRUuqr9_WkgML0pi-PmzjYoLxmFY068JHZsPO8bbAiuwEOyYc0-XPaE8CXHDpr1vnYHutUgD6rTa2vjoG2y4X3eNW3Qs2qwMmfkIqsFVZ_HK4-2SfT4JrMXcvnNiSPt8TqRlNnIVE0zwWnLfxceobeU-AYi0pJDiPeSO9c2zsNb0TqoEw_NiVdSpzjdB5KJJbTWvq_n_lJ85VGhcWPcmlxMC04HDnTwLAnY=w1787-h1008-no?authuser=0">
+<meta property="article:published_time" content="2022-05-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-19T21:37:26.220Z">
+<meta property="article:author" content="Zeke">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/HS0PBPmgVs2WQyzdT0lwT2YcKQ3cCbMhxut3UByeJU3_NQLJ7vxWsOLlxjq3hxrPgHEGmBPqx8RAuYAkfUNuVs6lqw9hb_l9slJCyJH69FndO8b_lyRbpuG-NoTOoZtDwh5SYpinjx1k4wrOQ4VlcxO3hFAykeLbWnVZV0rITpQrrgh8WbyQKXt5qwEOB8J7JV-pucy8BnxivATYje6fvQDrTlj4WCJhnLXeAz0f5gwEhbYPVmfYuBsLAA4IQqhAzPi46yPajumK_4NdeVgG5N2xhpjhxcX9MNkfbz7DyrG57QiP6CsJ_h_NQrRtxEQnWolq9BMEXCbyduL-pFilaDAD9_GBlbrcIiwGz1rzV4kgNXoKpzWLkFIIkz-nqlW6fNOCTurE3bu07ARzQat1u6IePFXzPhXdMk09hncoZnbsk2GsEj6ahhUR6mfvrMN7noQGLRypoPeWqIwxrwgtTWwosg0lx-zSq8cAUCO5GZBmY03B3NX04CedrwjSeNaDKvGBNI188Y8awEkZDpBNi015J6DncvVIYBSdH7kEjzrJ2t0ttnELpCr3wfQ9EvweG6DcNUZAVxBDDFSkRP5nMLT_mYE7IjXGm3NX18AVwqeXE68txjI-aEqOhpMc-XPlnJg3kckg38EifSSrj2d4hKhrDbXNckzVSb-UITQD17N3NdCCSItuo1Tw7DgE8nq9SMa_bydEiF4V8r02rG5fs_cNd0GyqE2SrCjeIDAHNeUZPwIN0sPoE042nKI=w972-h318-no?authuser=0">
+
+
+<link rel="canonical" href="https://jikeluo.gh/2022/05/20/20220520-add-page-without-layout/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://jikeluo.gh/2022/05/20/20220520-add-page-without-layout/","path":"2022/05/20/20220520-add-page-without-layout/","title":"在Hexo新增頁面中不使用預設主題"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>在Hexo新增頁面中不使用預設主題 | 想移民的準青年</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">想移民的準青年</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">世界雖大 內心遼闊</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-作品"><a href="/project/" rel="section"><i class="fa fa-user fa-fw"></i>作品</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8MD%E6%AA%94%E4%BE%86%E6%9E%B6%E8%A8%AD%E7%B6%B2%E9%A0%81"><span class="nav-number">2.</span> <span class="nav-text">利用MD檔來架設網頁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">參考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zeke"
+      src="https://scontent.ftpe7-1.fna.fbcdn.net/v/t1.6435-9/163066935_2801052503439846_6541552594126682577_n.jpg?_nc_cat=100&ccb=1-6&_nc_sid=09cbfe&_nc_ohc=Vy10p8VgHlkAX_jueHX&_nc_ht=scontent.ftpe7-1.fna&oh=00_AT_9PwrpW33QTdixmrkCjzdvaWLRRT1e0fjmxRVseAwCLw&oe=62A83756">
+  <p class="site-author-name" itemprop="name">Zeke</p>
+  <div class="site-description" itemprop="description">30歲前移民成功</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JikeLuo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;JikeLuo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://jikeluo.gh/2022/05/20/20220520-add-page-without-layout/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://scontent.ftpe7-1.fna.fbcdn.net/v/t1.6435-9/163066935_2801052503439846_6541552594126682577_n.jpg?_nc_cat=100&ccb=1-6&_nc_sid=09cbfe&_nc_ohc=Vy10p8VgHlkAX_jueHX&_nc_ht=scontent.ftpe7-1.fna&oh=00_AT_9PwrpW33QTdixmrkCjzdvaWLRRT1e0fjmxRVseAwCLw&oe=62A83756">
+      <meta itemprop="name" content="Zeke">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想移民的準青年">
+      <meta itemprop="description" content="30歲前移民成功">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="在Hexo新增頁面中不使用預設主題 | 想移民的準青年">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          在Hexo新增頁面中不使用預設主題
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2022-05-20 00:00:00 / 修改時間：05:37:26" itemprop="dateCreated datePublished" datetime="2022-05-20T00:00:00+08:00">2022-05-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>利用Hexo架構的部落格有個問題，它都會使用預設主題，但有時候我們需要展示自己寫的網頁，又不希望使用預設主題，以下方法能幫助你</p>
+<span id="more"></span>
+
+<h2 id="利用MD檔來架設網頁"><a href="#利用MD檔來架設網頁" class="headerlink" title="利用MD檔來架設網頁"></a>利用MD檔來架設網頁</h2><ul>
+<li>利用 <code>Hexo new &lt;file-name&gt;</code> 創建一個 md 檔案</li>
+</ul>
+<ul>
+<li>修改 Front-Matter 參數，設置為 <code>Layout: false</code> </li>
+</ul>
+<img src="https://lh3.googleusercontent.com/HS0PBPmgVs2WQyzdT0lwT2YcKQ3cCbMhxut3UByeJU3_NQLJ7vxWsOLlxjq3hxrPgHEGmBPqx8RAuYAkfUNuVs6lqw9hb_l9slJCyJH69FndO8b_lyRbpuG-NoTOoZtDwh5SYpinjx1k4wrOQ4VlcxO3hFAykeLbWnVZV0rITpQrrgh8WbyQKXt5qwEOB8J7JV-pucy8BnxivATYje6fvQDrTlj4WCJhnLXeAz0f5gwEhbYPVmfYuBsLAA4IQqhAzPi46yPajumK_4NdeVgG5N2xhpjhxcX9MNkfbz7DyrG57QiP6CsJ_h_NQrRtxEQnWolq9BMEXCbyduL-pFilaDAD9_GBlbrcIiwGz1rzV4kgNXoKpzWLkFIIkz-nqlW6fNOCTurE3bu07ARzQat1u6IePFXzPhXdMk09hncoZnbsk2GsEj6ahhUR6mfvrMN7noQGLRypoPeWqIwxrwgtTWwosg0lx-zSq8cAUCO5GZBmY03B3NX04CedrwjSeNaDKvGBNI188Y8awEkZDpBNi015J6DncvVIYBSdH7kEjzrJ2t0ttnELpCr3wfQ9EvweG6DcNUZAVxBDDFSkRP5nMLT_mYE7IjXGm3NX18AVwqeXE68txjI-aEqOhpMc-XPlnJg3kckg38EifSSrj2d4hKhrDbXNckzVSb-UITQD17N3NdCCSItuo1Tw7DgE8nq9SMa_bydEiF4V8r02rG5fs_cNd0GyqE2SrCjeIDAHNeUZPwIN0sPoE042nKI=w972-h318-no?authuser=0" width="800px" />
+
+<hr>
+<ul>
+<li>再把你的 HTML 給貼到下方內文區</li>
+</ul>
+<img src="https://lh3.googleusercontent.com/fc-RLAxuAy5jSZOujqIOs6FCrMxw4xClxUWvNyZ8mHyLGkOItuM0ywnBtDzLD5lKmucle4wt8_T1r9liyjbKbllmvWb7n1onuVGTYlyjjXAz8bGzt4l23EBQTS7zvwTaMTBHWg4xI7eswrisg8mxpGabIUNkttz4FyGgEmUxi-2gU67TP96hmT29BVLoW1Qeek4egmOM6Zp56XMmu59IGuJ3dEpyyHt1AOd7xo0qU6Gs5vhwYGQXfbkxWDc6u7Qnv6hYVlENlUNAXayD1FugEdkWSf53Cn-KjDpquqibilXDp_7ASn4vCm4lZKcyQD5jTY8823GPZLOnF-eWqrRsOFzpIVKffdFVJnCttFXR2CrfEefjbrynNZVnJzicW1uab11ihUjGuWnDlDXIwga7RgoNQeMvKZPOvvBbv5h1t0A_4LTB3TWDq5cjdJaBG_qQUhfhIr5BTq-1ZaIr_QvcOij0KYgVGDIf09X5QBhdQhDYd-uZwv6aOP1vQPANWBSGznbLtG6XApU-vX2HLCvL2ejN14u8TU08CPBhEnH0y-8Z1e4uvrcYDxHWOBiFeNW8fx18DcC4d3eBAzNNO3BegJEazkl8FvAqBOOxkO1MWxX-1RUyAXBevS4vlqlEDWT1qhZAvazLXkYlc2j8FDIgtz7ugM-wElojtzKsAm2WqRHnOGOg5EVxdP-nStLkDxxTyFRe9SALd6yJtwa0wE5QMqj7pWzJgt9SM7wXV_j_xAH2Hk1bgadpI23ZjsY=w981-h842-no?authuser=0" width="800px" />
+
+<hr>
+<ul>
+<li>推到 Github上，利用 <code>https://your-blog.git.io/file-name</code> 即可進入你的網站</li>
+</ul>
+<img src="https://lh3.googleusercontent.com/I9kqPqka3UEVcAUjrXJ742-n-AgU6lvpADvViH3jHeOR211G2iQlzpYLz4I6h7j_k2j8eZeR7j2vdd104kXOka_xOckdXn4eYBI1ANkbyou_FO-7ZGpjaWVNqvT6l_l6dKe8RSV1a1ISKqJ6zt18usYb-YkdsgrIvrUDvk6YkInbFEUanKuRR-iFOVuPvYY2FybNjv7h7fCwYrhJPjDnnhdW5qYq6YXRSEwrehFUI8gkXotUi-elDk_8ilkP7sh7N8Tt9N4VqXZjkYqtHOqq1kylyswU1NcdEqfi__aN_yak4ZjJBNvstBpe5X-B3nDTitBdZ13Hi4IN3ablSK75akuYYV98-UxjPASnGmcQT97K8mZwjcH1_AMqSwV_8B0gX4BBUcToqmLFEBNRjr7xdu5UeRbLM8WKDTuCeUsYbki2U2_ybigC2a5uJ6KjXmuXTeOsQRX_w1bjHdB-p1LSrZEyyoGQCIVIQ3eiOLWbF3vCLRKNb_CwOd8kpzksvKSNvcXhGr_6xKcnAgkIgX28O_XvpRUuqr9_WkgML0pi-PmzjYoLxmFY068JHZsPO8bbAiuwEOyYc0-XPaE8CXHDpr1vnYHutUgD6rTa2vjoG2y4X3eNW3Qs2qwMmfkIqsFVZ_HK4-2SfT4JrMXcvnNiSPt8TqRlNnIVE0zwWnLfxceobeU-AYi0pJDiPeSO9c2zsNb0TqoEw_NiVdSpzjdB5KJJbTWvq_n_lJ85VGhcWPcmlxMC04HDnTwLAnY=w1787-h1008-no?authuser=0" width="800px" />
+
+
+
+<img src="" width="800px" />
+
+
+
+<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/90320295">[ CSDN ] Hexo 博客自定义一个不使用主题模板渲染的独立页面</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/18/20220518_HEXO_OAuth/" rel="prev" title="替NexT主題添加Gitalk留言區">
+                  <i class="fa fa-chevron-left"></i> 替NexT主題添加Gitalk留言區
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zeke</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"JikeLuo","repo":"JikeLuo.github.io","client_id":"0beb26a807099708121e","client_secret":"779781dd425229702e2f7e674f6028aaf557868a","admin_user":"JikeLuo","distraction_free_mode":true,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"e1d4f362939ea6202d7ea25506429339"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
