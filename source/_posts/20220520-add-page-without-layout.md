@@ -1,0 +1,45 @@
+---
+title: 在Hexo新增頁面中不使用預設主題
+date: 2022-05-20
+categories: Tutorial
+tags:
+- Hexo
+---
+
+## 前言
+
+利用Hexo架構的部落格有個問題，它都會使用預設主題，但有時候我們需要展示自己寫的網頁，又不希望使用預設主題，以下方法能幫助你
+
+<!--more-->
+
+## 利用MD檔來架設網頁
+
++ 利用 `Hexo new <file-name>` 創建一個 md 檔案
+
+
+
++ 修改 Front-Matter 參數，設置為 `Layout: false` 
+
+<img src="https://lh3.googleusercontent.com/HS0PBPmgVs2WQyzdT0lwT2YcKQ3cCbMhxut3UByeJU3_NQLJ7vxWsOLlxjq3hxrPgHEGmBPqx8RAuYAkfUNuVs6lqw9hb_l9slJCyJH69FndO8b_lyRbpuG-NoTOoZtDwh5SYpinjx1k4wrOQ4VlcxO3hFAykeLbWnVZV0rITpQrrgh8WbyQKXt5qwEOB8J7JV-pucy8BnxivATYje6fvQDrTlj4WCJhnLXeAz0f5gwEhbYPVmfYuBsLAA4IQqhAzPi46yPajumK_4NdeVgG5N2xhpjhxcX9MNkfbz7DyrG57QiP6CsJ_h_NQrRtxEQnWolq9BMEXCbyduL-pFilaDAD9_GBlbrcIiwGz1rzV4kgNXoKpzWLkFIIkz-nqlW6fNOCTurE3bu07ARzQat1u6IePFXzPhXdMk09hncoZnbsk2GsEj6ahhUR6mfvrMN7noQGLRypoPeWqIwxrwgtTWwosg0lx-zSq8cAUCO5GZBmY03B3NX04CedrwjSeNaDKvGBNI188Y8awEkZDpBNi015J6DncvVIYBSdH7kEjzrJ2t0ttnELpCr3wfQ9EvweG6DcNUZAVxBDDFSkRP5nMLT_mYE7IjXGm3NX18AVwqeXE68txjI-aEqOhpMc-XPlnJg3kckg38EifSSrj2d4hKhrDbXNckzVSb-UITQD17N3NdCCSItuo1Tw7DgE8nq9SMa_bydEiF4V8r02rG5fs_cNd0GyqE2SrCjeIDAHNeUZPwIN0sPoE042nKI=w972-h318-no?authuser=0" width="800px" />
+
+------
+
++ 再把你的 HTML 給貼到下方內文區
+
+<img src="https://lh3.googleusercontent.com/fc-RLAxuAy5jSZOujqIOs6FCrMxw4xClxUWvNyZ8mHyLGkOItuM0ywnBtDzLD5lKmucle4wt8_T1r9liyjbKbllmvWb7n1onuVGTYlyjjXAz8bGzt4l23EBQTS7zvwTaMTBHWg4xI7eswrisg8mxpGabIUNkttz4FyGgEmUxi-2gU67TP96hmT29BVLoW1Qeek4egmOM6Zp56XMmu59IGuJ3dEpyyHt1AOd7xo0qU6Gs5vhwYGQXfbkxWDc6u7Qnv6hYVlENlUNAXayD1FugEdkWSf53Cn-KjDpquqibilXDp_7ASn4vCm4lZKcyQD5jTY8823GPZLOnF-eWqrRsOFzpIVKffdFVJnCttFXR2CrfEefjbrynNZVnJzicW1uab11ihUjGuWnDlDXIwga7RgoNQeMvKZPOvvBbv5h1t0A_4LTB3TWDq5cjdJaBG_qQUhfhIr5BTq-1ZaIr_QvcOij0KYgVGDIf09X5QBhdQhDYd-uZwv6aOP1vQPANWBSGznbLtG6XApU-vX2HLCvL2ejN14u8TU08CPBhEnH0y-8Z1e4uvrcYDxHWOBiFeNW8fx18DcC4d3eBAzNNO3BegJEazkl8FvAqBOOxkO1MWxX-1RUyAXBevS4vlqlEDWT1qhZAvazLXkYlc2j8FDIgtz7ugM-wElojtzKsAm2WqRHnOGOg5EVxdP-nStLkDxxTyFRe9SALd6yJtwa0wE5QMqj7pWzJgt9SM7wXV_j_xAH2Hk1bgadpI23ZjsY=w981-h842-no?authuser=0" width="800px" />
+
+------
+
++ 推到 Github上，利用 `https://your-blog.git.io/file-name` 即可進入你的網站
+
+<img src="https://lh3.googleusercontent.com/I9kqPqka3UEVcAUjrXJ742-n-AgU6lvpADvViH3jHeOR211G2iQlzpYLz4I6h7j_k2j8eZeR7j2vdd104kXOka_xOckdXn4eYBI1ANkbyou_FO-7ZGpjaWVNqvT6l_l6dKe8RSV1a1ISKqJ6zt18usYb-YkdsgrIvrUDvk6YkInbFEUanKuRR-iFOVuPvYY2FybNjv7h7fCwYrhJPjDnnhdW5qYq6YXRSEwrehFUI8gkXotUi-elDk_8ilkP7sh7N8Tt9N4VqXZjkYqtHOqq1kylyswU1NcdEqfi__aN_yak4ZjJBNvstBpe5X-B3nDTitBdZ13Hi4IN3ablSK75akuYYV98-UxjPASnGmcQT97K8mZwjcH1_AMqSwV_8B0gX4BBUcToqmLFEBNRjr7xdu5UeRbLM8WKDTuCeUsYbki2U2_ybigC2a5uJ6KjXmuXTeOsQRX_w1bjHdB-p1LSrZEyyoGQCIVIQ3eiOLWbF3vCLRKNb_CwOd8kpzksvKSNvcXhGr_6xKcnAgkIgX28O_XvpRUuqr9_WkgML0pi-PmzjYoLxmFY068JHZsPO8bbAiuwEOyYc0-XPaE8CXHDpr1vnYHutUgD6rTa2vjoG2y4X3eNW3Qs2qwMmfkIqsFVZ_HK4-2SfT4JrMXcvnNiSPt8TqRlNnIVE0zwWnLfxceobeU-AYi0pJDiPeSO9c2zsNb0TqoEw_NiVdSpzjdB5KJJbTWvq_n_lJ85VGhcWPcmlxMC04HDnTwLAnY=w1787-h1008-no?authuser=0" width="800px" />
+
+
+
+<img src="" width="800px" />
+
+
+
+## 參考
+
+[[ CSDN ] Hexo 博客自定义一个不使用主题模板渲染的独立页面](https://blog.csdn.net/qq_36759224/article/details/90320295)

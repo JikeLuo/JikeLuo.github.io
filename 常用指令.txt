@@ -1,0 +1,14 @@
+hexo clean --> hexo g --> hexo d ( 推送的順序
+
+hexo clean ( 清除根目錄 public 資料夾
+
+hexo generate / g ( 產生靜態頁面
+
+hexo deploy / d ( 推送到Github
+
+hexo server / s ( 開啟本地端伺服器進行觀看
+
+hexo new page <folder name>
+
+<!--more-->
+
