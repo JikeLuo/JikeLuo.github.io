@@ -53,7 +53,7 @@ song.map((item, index) => {
 
 
 window.addEventListener('keydown', (e) => {
-    // e.preventDefault()
+    e.preventDefault()
     if (e.code === "Space") DetectScore(spaceBlock, spaceDetect, e)
     if (e.code === "KeyD") DetectScore(oneBlock, oneDetect, e)
     if (e.code === "KeyF") DetectScore(twoBlock, twoDetect, e)
